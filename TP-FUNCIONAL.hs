@@ -77,3 +77,16 @@ viajesInteresantes = map (\viaje -> (nombreViaje viaje, anioViaje viaje)) . filt
 -- 5)   Dada una lista de viajes, año inicio, año fin obtener nombre y el año de TODOS los viajes entre esos dos años pasados por parametro
 interesantesPorFiltro viajes inicio fin = map (\viaje -> (nombreViaje viaje, anioViaje viaje)) $ filter enRango viajes
     where enRango viaje = anioViaje viaje >= inicio && anioViaje viaje <= fin
+
+-- 6)   Función que permite hacer que el viajero realice una lista de viajes, se le apliquen las transformaciones necesarias y obtenga los recuerdos.
+
+
+-- 7) Definir una funcion ESTADISTICA que reciba una funcion condicion, una funcion transformacion y una lista 
+estadistica condicion transformacion lista = map transformacion $ filter condicion lista
+
+-- Dada una lista encontrar todos los nombres de los viajes que tienen mas de 3 transformaciones
+viajesMasDe3Transformaciones = estadistica (\viaje -> length (transformacionesViaje viaje) > 3) nombreViaje
+
+
+
+
