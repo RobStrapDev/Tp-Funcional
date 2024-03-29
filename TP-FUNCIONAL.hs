@@ -16,7 +16,7 @@ viajes = [viaje1, viaje2, viaje3, viaje4, viaje5]
 -- Recuerdos
 -- Viajes realizados
 data Viajero = Viajero {
-    nombreViajero :: String,
+    nomViajero :: String,
     edadViajero :: Int,
     recuerdosViajero :: [Recuerdo],
     viajesViajero :: [Viaje]
@@ -54,7 +54,7 @@ data Transformacion = PerdidaRecuerdosVocales | AumentoEdad Int
 
 -- Obtener el nombre del viajero
 nombreViajero :: Viajero -> String
-nombreViajero = nombreViajero
+nombreViajero = nomViajero
 
 -- Obtener nombre del viaje
 nombreViaje :: Viaje -> String
