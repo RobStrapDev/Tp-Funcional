@@ -1,3 +1,13 @@
+recuerdos1 = [Recuerdo "Recuerdo1" "Lugar1", Recuerdo "Recuerdo2" "Lugar2", Recuerdo "Recuerdo3" "Lugar3"]
+viaje1 = Viaje "Lejano Oeste" (AlPasado recuerdos1) [] 1800
+viaje2 = Viaje "Futuro1" (AlFuturo 100) [] 2200
+viaje3 = Viaje "Futuro2" (AlFuturo 200) [] 2300
+viaje4 = Viaje "Pasado1" (AlPasado []) [] 1600
+viaje5 = Viaje "Futuro3" (AlFuturo 150) [] 2250
+
+viajes = [viaje1, viaje2, viaje3, viaje4, viaje5]
+
+
 -- Definicion de tipo de datos
 
 -- Datos del viajero
@@ -99,6 +109,8 @@ sumaAñosLuzViajesAlFuturo = sum . estadistica esViajeAlFuturo obtenerAñosLuz
 
 -- Dada una lista, obtener los nombres de todos los viajes. LOS VIAJES AL PASADO NO SUMAN AÑOS LUZ!
 nombresViajes = estadistica (\_ -> True) nombreViaje
+
+
 
 
 
