@@ -59,5 +59,13 @@ nombreYOrigenRecuerdo recuerdo = (nombreRecuerdo recuerdo, lugarProvenienciaRecu
 -- Obtener recuerdos y los viajes de un viajero
 recuerdosYViajesViajero viajero = (recuerdosViajero viajero, viajesViajero viajero)
 
-
-
+-- Determinar si un viaje es o no interesante
+-- Es interesante si : 
+-- Es al LEJANO OESTE
+-- Es un viaje al pasado Y hay mas de 5 recuerdos
+viajeInteresante :: Viaje -> Bool
+viajeInteresante viaje = case (destinoViaje viaje, tipoViaje viaje) of
+    ("Lejano Oeste", _ ) -> True
+    (_, AlPasado recuerdos) -> length recuerdos > 5
+    (_ , AlFuturo _) -> True
+    _ -> False
