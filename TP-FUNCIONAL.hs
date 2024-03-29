@@ -63,9 +63,15 @@ recuerdosYViajesViajero viajero = (recuerdosViajero viajero, viajesViajero viaje
 -- Es interesante si : 
 -- Es al LEJANO OESTE
 -- Es un viaje al pasado Y hay mas de 5 recuerdos
+-- Es un viaje al FUTURO
 viajeInteresante :: Viaje -> Bool
 viajeInteresante viaje = case (destinoViaje viaje, tipoViaje viaje) of
     ("Lejano Oeste", _ ) -> True
     (_, AlPasado recuerdos) -> length recuerdos > 5
     (_ , AlFuturo _) -> True
     _ -> False
+
+-- Dada una lista de viajes mostrar los nombres y los años de todos los viajes INTERESANTES
+viajesInteresantes viajes = map (\viaje -> (nombreViaje viaje, anioViaje viaje)) $ filter viajeInteresante viajes
+
+-- 
