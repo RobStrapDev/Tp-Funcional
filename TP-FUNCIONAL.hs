@@ -87,6 +87,18 @@ estadistica condicion transformacion lista = map transformacion $ filter condici
 -- Dada una lista encontrar todos los nombres de los viajes que tienen mas de 3 transformaciones
 viajesMasDe3Transformaciones = estadistica (\viaje -> length (transformacionesViaje viaje) > 3) nombreViaje
 
+-- Dada una lista de viajes, obtener la suma de todos los años luz que suman
+sumaAñosLuzViajesAlFuturo = sum . estadistica esViajeAlFuturo obtenerAñosLuz
+  where
+    esViajeAlFuturo viaje = case tipoViaje viaje of
+                                AlFuturo _ -> True
+                                _ -> False
+    obtenerAñosLuz viaje = case tipoViaje viaje of
+                                AlFuturo años -> años
+                                _ -> 0
+
+-- Dada una lista, obtener los nombres de todos los viajes. LOS VIAJES AL PASADO NO SUMAN AÑOS LUZ!
+nombresViajes = estadistica (\_ -> True) nombreViaje
 
 
 
