@@ -25,3 +25,13 @@ data Viaje = Viaje {
     transformacionesViaje :: [Transformaciones],
     anioViaje :: Int
 }
+
+-- Datos del recuerdo
+-- Nombre
+-- Proveniencia
+
+data Recuerdo = Recuerdo {
+    nombreRecuerdo :: String,
+    lugarProvenienciaRecuerdo :: String
+}
+
