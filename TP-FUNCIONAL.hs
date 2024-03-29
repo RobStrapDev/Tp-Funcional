@@ -71,7 +71,9 @@ viajeInteresante viaje = case (destinoViaje viaje, tipoViaje viaje) of
     (_ , AlFuturo _) -> True
     _ -> False
 
--- Dada una lista de viajes mostrar los nombres y los años de todos los viajes INTERESANTES
-viajesInteresantes viajes = map (\viaje -> (nombreViaje viaje, anioViaje viaje)) $ filter viajeInteresante viajes
+-- 4)    Dada una lista de viajes mostrar los nombres y los años de todos los viajes INTERESANTES
+viajesInteresantes = map (\viaje -> (nombreViaje viaje, anioViaje viaje)) . filter viajeInteresante
 
--- 
+-- 5)   Dada una lista de viajes, año inicio, año fin obtener nombre y el año de TODOS los viajes entre esos dos años pasados por parametro
+interesantesPorFiltro viajes inicio fin = map (\viaje -> (nombreViaje viaje, anioViaje viaje)) $ filter enRango viajes
+    where enRango viaje = anioViaje viaje >= inicio && anioViaje viaje <= fin
