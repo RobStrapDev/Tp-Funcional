@@ -56,7 +56,8 @@ nombreViaje = destinoViaje
 nombreYOrigenRecuerdo :: Recuerdo -> (String,String)
 nombreYOrigenRecuerdo recuerdo = (nombreRecuerdo recuerdo, lugarProvenienciaRecuerdo recuerdo)
 
-
+-- Obtener recuerdos y los viajes de un viajero
+recuerdosYViajesViajero viajero = (recuerdosViajero viajero, viajesViajero viajero)
 
 
 
