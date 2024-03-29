@@ -42,5 +42,21 @@ data TipoViaje = AlFuturo Int | AlPasado [Recuerdo]
 -- Viaja al futuro, Hill Valley, su edad aumenta
 data Transformacion = PerdidaRecuerdosVocales | AumentoEdad Int
 
+-- Obtener el nombre del viajero
+nombreViajero :: Viajero -> String
+nombreViajero = nombreViajero
+
+-- Obtener nombre del viaje
+nombreViaje :: Viaje -> String
+nombreViaje = destinoViaje
+
+-- Dado un recuerdo
+-- Nombre
+-- Lugar donde proviene
+nombreYOrigenRecuerdo :: Recuerdo -> (String,String)
+nombreYOrigenRecuerdo recuerdo = (nombreRecuerdo recuerdo, lugarProvenienciaRecuerdo recuerdo)
+
+
+
 
 
