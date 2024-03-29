@@ -1,3 +1,4 @@
+-- Definición de algunos datos de ejemplo
 recuerdos1 = [Recuerdo "Recuerdo1" "Lugar1", Recuerdo "Recuerdo2" "Lugar2", Recuerdo "Recuerdo3" "Lugar3"]
 viaje1 = Viaje "Lejano Oeste" (AlPasado recuerdos1) [] 1800
 viaje2 = Viaje "Futuro1" (AlFuturo 100) [] 2200
@@ -6,6 +7,13 @@ viaje4 = Viaje "Pasado1" (AlPasado []) [] 1600
 viaje5 = Viaje "Futuro3" (AlFuturo 150) [] 2250
 
 viajes = [viaje1, viaje2, viaje3, viaje4, viaje5]
+
+-- Definición de algunos viajeros de ejemplo
+viajero1 = Viajero "Juan" 30 [Recuerdo "RecuerdoX" "LugarX", Recuerdo "RecuerdoY" "LugarY"] [viaje1, viaje2]
+viajero2 = Viajero "Ana" 25 [] [viaje3, viaje4]
+viajero3 = Viajero "Pedro" 40 [Recuerdo "RecuerdoZ" "LugarZ"] [viaje5]
+
+viajeros = [viajero1, viajero2, viajero3]
 
 
 -- Definicion de tipo de datos
