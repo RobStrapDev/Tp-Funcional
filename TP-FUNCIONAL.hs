@@ -13,4 +13,15 @@ data Viajero = Viajero {
     viajesViajero :: [Viaje]
 }
 
+-- Datos de viajes
+-- Destino
+-- Tipo de viajes
+-- Transformaciones
+-- Año
 
+data Viaje = Viaje {
+    destinoViaje :: String,
+    tipoViaje :: TipoViaje,
+    transformacionesViaje :: [Transformaciones],
+    anioViaje :: Int
+}
