@@ -26,8 +26,8 @@ viajeros = [viajero1, viajero2, viajero3]
 data Viajero = Viajero {
     nomViajero :: String,
     edadViajero :: Int,
-    recuerdosViajero :: [Recuerdo],
-    viajesViajero :: [Viaje]
+    recuerdosViajero :: [Recuerdo], -- Almacena una lista de recuerdos del tipo Recuerdo
+    viajesViajero :: [Viaje] -- Almacena una lista de viajes del tipo Viaje
 }
 
 -- Datos de viajes
