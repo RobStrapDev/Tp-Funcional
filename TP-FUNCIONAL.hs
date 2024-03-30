@@ -93,6 +93,7 @@ interesantesPorFiltro viajes inicio fin = map (\viaje -> (nombreViaje viaje, ani
 
 -- 7) Definir una funcion ESTADISTICA que reciba una funcion condicion, una funcion transformacion y una lista 
 estadistica condicion transformacion lista = map transformacion $ filter condicion lista
+-- Funcion que devuelve una LISTA segun la funcion transformacion aplicada a solo los elementos que cumplen la condicion
 
 -- Dada una lista encontrar todos los nombres de los viajes que tienen mas de 3 transformaciones
 viajesMasDe3Transformaciones = estadistica (\viaje -> length (transformacionesViaje viaje) > 3) nombreViaje
