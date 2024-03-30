@@ -1,6 +1,10 @@
 -- Definición de algunos datos de ejemplo
-recuerdos1 = [Recuerdo "Recuerdo1" "Lugar1", Recuerdo "Recuerdo2" "Lugar2", Recuerdo "Recuerdo3" "Lugar3"]
-viaje1 = Viaje "Lejano Oeste" (AlPasado recuerdos1) [] 1800
+recuerdo1 = Recuerdo "Recuerdo1" "Lugar1"
+recuerdo2 = Recuerdo "Recuerdo2" "Lugar2"
+recuerdo3 = Recuerdo "Recuerdo3" "Lugar3"
+recuerdos = [recuerdo1, recuerdo2, recuerdo3]
+
+viaje1 = Viaje "Lejano Oeste" (AlPasado recuerdos) [] 1800
 viaje2 = Viaje "Futuro1" (AlFuturo 100) [] 2200
 viaje3 = Viaje "Futuro2" (AlFuturo 200) [] 2300
 viaje4 = Viaje "Pasado1" (AlPasado []) [] 1600
