@@ -89,6 +89,13 @@ interesantesPorFiltro viajes inicio fin = map (\viaje -> (nombreViaje viaje, ani
     where enRango viaje = anioViaje viaje >= inicio && anioViaje viaje <= fin
 
 -- 6)   Función que permite hacer que el viajero realice una lista de viajes, se le apliquen las transformaciones necesarias y obtenga los recuerdos.
+realizarViajes :: Viajero -> [Viaje] -> Viajero
+realizarViajes viajero viajes = foldl aplicarTransformaciones viajero viajes
+  where
+    aplicarTransformaciones vj viaje = foldl aplicarTransformacion vj (transformacionesViaje viaje)
+    aplicarTransformacion vj PerdidaRecuerdosVocales = vj { recuerdosViajero = filter (not . empiezaConVocal) (recuerdosViajero vj) }
+    aplicarTransformacion vj (AumentoEdad años) = vj { edadViajero = edadViajero vj + años }
+    empiezaConVocal recuerdo = head (nombreRecuerdo recuerdo) `elem` "aeiouAEIOU"
 
 
 -- 7) Definir una funcion ESTADISTICA que reciba una funcion condicion, una funcion transformacion y una lista 
