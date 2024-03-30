@@ -97,6 +97,9 @@ estadistica condicion transformacion lista = map transformacion $ filter condici
 
 -- Dada una lista encontrar todos los nombres de los viajes que tienen mas de 3 transformaciones
 viajesMasDe3Transformaciones = estadistica (\viaje -> length (transformacionesViaje viaje) > 3) nombreViaje
+-- estadistica : Devuelve una lista transformada según la función de transformacion, aplicada solo a los elementos que satisfacen la condicion
+-- (\viaje -> length (transformacionesViaje viaje) > 3): Es la función de condicion
+-- nombreViaje: Es la función de transformacion
 
 -- Dada una lista de viajes, obtener la suma de todos los años luz que suman
 sumaAñosLuzViajesAlFuturo = sum . estadistica esViajeAlFuturo obtenerAñosLuz
