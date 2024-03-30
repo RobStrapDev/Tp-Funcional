@@ -5,19 +5,15 @@ viaje2 = Viaje "Futuro1" (AlFuturo 100) [] 2200
 viaje3 = Viaje "Futuro2" (AlFuturo 200) [] 2300
 viaje4 = Viaje "Pasado1" (AlPasado []) [] 1600
 viaje5 = Viaje "Futuro3" (AlFuturo 150) [] 2250
-
 viajes = [viaje1, viaje2, viaje3, viaje4, viaje5]
 
 -- Definición de algunos viajeros de ejemplo
 viajero1 = Viajero "Juan" 30 [Recuerdo "RecuerdoX" "LugarX", Recuerdo "RecuerdoY" "LugarY"] [viaje1, viaje2]
 viajero2 = Viajero "Ana" 25 [] [viaje3, viaje4]
 viajero3 = Viajero "Pedro" 40 [Recuerdo "RecuerdoZ" "LugarZ"] [viaje5]
-
 viajeros = [viajero1, viajero2, viajero3]
 
-
 -- Definicion de tipo de datos
-
 -- Datos del viajero
 -- Nombre
 -- Edad
@@ -29,7 +25,6 @@ data Viajero = Viajero {
     recuerdosViajero :: [Recuerdo], -- Almacena una lista de recuerdos del tipo Recuerdo
     viajesViajero :: [Viaje] -- Almacena una lista de viajes del tipo Viaje
 }
-
 -- Datos de viajes
 -- Destino
 -- Tipo de viajes
@@ -38,10 +33,9 @@ data Viajero = Viajero {
 data Viaje = Viaje {
     destinoViaje :: String,
     tipoViaje :: TipoViaje,
-    transformacionesViaje :: [Transformacion],
+    transformacionesViaje :: [Transformacion], -- Almcena una lista de transformaciones 
     anioViaje :: Int
 }
-
 -- Datos del recuerdo
 -- Nombre
 -- Proveniencia
@@ -49,16 +43,14 @@ data Recuerdo = Recuerdo {
     nombreRecuerdo :: String,
     lugarProvenienciaRecuerdo :: String
 }
-
 -- Tipo de viajes
 -- Al pasado - Conocemos recuerdos
 -- Al futuro - Cantidad años que viajo
-data TipoViaje = AlFuturo Int | AlPasado [Recuerdo]
-
+data TipoViaje = AlFuturo Int | AlPasado [Recuerdo] -- Almacena dos constructores - AlFuturo contiene cantidad años - AlPasado contiene lista de valores tipo Recuerdo
 -- Transformaciones
 -- Viaja al lejano oeste pierde todos los recuerdos que comienzan con vocal
 -- Viaja al futuro, Hill Valley, su edad aumenta
-data Transformacion = PerdidaRecuerdosVocales | AumentoEdad Int
+data Transformacion = PerdidaRecuerdosVocales | AumentoEdad Int -- Almacena dos constructores - PerdidaRecuerdosVocales - AumentoEdad aumeto de edad experimentado por viajero
 
 -- Obtener el nombre del viajero
 nombreViajero :: Viajero -> String
